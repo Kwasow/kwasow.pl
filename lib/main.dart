@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final String musekitIcon = 'assets/musekit-icon.svg';
-  final String githubIcon = 'github.svg';
-  final String twitterIcon = 'twitter.svg';
+  final String githubIcon = 'assets/github.svg';
+  final String twitterIcon = 'assets/twitter.svg';
 
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -139,11 +139,11 @@ class MyHomePage extends StatelessWidget {
         footer: Footer(
           backgroundColor: const Color.fromARGB(255, 39, 39, 39),
           padding: const EdgeInsets.all(5.0),
+          alignment: Alignment.centerLeft,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 10),
+                padding: const EdgeInsets.only(right: 10, left: 50),
                 child: SvgPicture.asset(
                   githubIcon,
                   color: Colors.white,
@@ -163,14 +163,8 @@ class MyHomePage extends StatelessWidget {
                         }),
                 ]),
               ),
-              const VerticalDivider(
-                thickness: 2,
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey,
-              ),
               Padding(
-                padding: const EdgeInsets.only(right: 10),
+                padding: const EdgeInsets.only(right: 10, left: 50),
                 child: SvgPicture.asset(
                   twitterIcon,
                   color: Colors.white,

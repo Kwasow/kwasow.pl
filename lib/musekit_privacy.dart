@@ -48,7 +48,7 @@ class MusekitPrivacyPage extends StatelessWidget {
             ];
           }
           return Padding(
-            padding: const EdgeInsets.only(top: 40, left: 40),
+            padding: const EdgeInsets.all(40),
             child: Column(children: children),
           );
         },
@@ -58,6 +58,6 @@ class MusekitPrivacyPage extends StatelessWidget {
 
   Future<String> _loadPolicy(BuildContext context) async {
     return await DefaultAssetBundle.of(context)
-        .loadString('musekit-privacy.txt');
+        .loadString('assets/musekit-privacy.txt');
   }
 }
