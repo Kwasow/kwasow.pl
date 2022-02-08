@@ -139,8 +139,9 @@ class MyHomePage extends StatelessWidget {
         footer: Footer(
           backgroundColor: const Color.fromARGB(255, 39, 39, 39),
           padding: const EdgeInsets.all(5.0),
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.center,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 10, left: 50),
