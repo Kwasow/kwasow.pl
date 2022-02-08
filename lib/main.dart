@@ -26,7 +26,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           textTheme: textTheme,
           scaffoldBackgroundColor: const Color.fromARGB(255, 24, 24, 24)),
-      home: const MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': ((context) => const MyHomePage()),
+        '/musekit_privacy': ((context) => const MusekitPrivacyPage())
+      },
     );
   }
 }
