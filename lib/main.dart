@@ -128,6 +128,21 @@ class MyHomePage extends StatelessWidget {
                             decoration: TextDecoration.underline,
                             color: Colors.white,
                           ),
+                          text: "Play Store",
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () async {
+                              _launchURL(
+                                  "https://play.google.com/store/apps/details?id=com.kwasow.musekit");
+                            }),
+                    ]),
+                  ),
+                  Text.rich(
+                    TextSpan(children: [
+                      TextSpan(
+                          style: const TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.white,
+                          ),
                           text: "GitHub",
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
