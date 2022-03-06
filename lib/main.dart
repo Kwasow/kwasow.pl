@@ -95,12 +95,15 @@ class MyHomePage extends StatelessWidget {
                       height: 160,
                     ),
                   ),
-                  const Text(
-                    "Musekit",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      "Musekit",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                   Text.rich(
