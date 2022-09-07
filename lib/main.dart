@@ -116,12 +116,9 @@ class MyHomePage extends StatelessWidget {
                           text: "Privacy policy",
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const MusekitPrivacyPage()));
-                            }),
+                              Navigator.pushNamed(context, "/musekit_privacy");
+                            },
+                      ),
                     ]),
                   ),
                   Text.rich(
