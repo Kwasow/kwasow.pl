@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:footer/footer_view.dart';
+import 'package:githubpages/main_footer.dart';
 import 'package:githubpages/musekit_privacy.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:footer/footer.dart';
+import 'utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,8 +37,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final String musekitIcon = 'assets/musekit-icon.svg';
-  final String githubIcon = 'assets/github.svg';
-  final String twitterIcon = 'assets/twitter.svg';
 
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -46,58 +44,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FooterView(
-        footer: Footer(
-          backgroundColor: const Color.fromARGB(255, 39, 39, 39),
-          padding: const EdgeInsets.all(5.0),
-          alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10, left: 50),
-                child: SvgPicture.asset(
-                  githubIcon,
-                  color: Colors.white,
-                ),
-              ),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.white,
-                      ),
-                      text: "Kwasow",
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () async {
-                          _launchURL("https://github.com/Kwasow");
-                        }),
-                ]),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10, left: 50),
-                child: SvgPicture.asset(
-                  twitterIcon,
-                  color: Colors.white,
-                ),
-              ),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.white,
-                      ),
-                      text: "@KarolWasowski",
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () async {
-                          _launchURL("https://twitter.com/KarolWasowski");
-                        }),
-                ]),
-              ),
-            ],
-          ),
-        ),
+        footer: MainFooter(),
         children: [
           Column(
             children: [
@@ -183,7 +130,7 @@ class MyHomePage extends StatelessWidget {
                           text: "Play Store",
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
-                              _launchURL(
+                              launchURL(
                                   "https://play.google.com/store/apps/details?id=com.kwasow.musekit");
                             }),
                     ]),
@@ -198,7 +145,7 @@ class MyHomePage extends StatelessWidget {
                         text: "GitHub",
                         recognizer: TapGestureRecognizer()
                           ..onTap = () async {
-                            _launchURL("https://github.com/Kwasow/Musekit");
+                            launchURL("https://github.com/Kwasow/Musekit");
                           },
                       ),
                     ]),
@@ -210,11 +157,5 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _launchURL(url) async {
-    if (!await launchUrl(url)) {
-      throw 'Could not launch $url';
-    }
   }
 }
