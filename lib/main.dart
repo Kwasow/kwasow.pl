@@ -46,6 +46,58 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FooterView(
+        footer: Footer(
+          backgroundColor: const Color.fromARGB(255, 39, 39, 39),
+          padding: const EdgeInsets.all(5.0),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10, left: 50),
+                child: SvgPicture.asset(
+                  githubIcon,
+                  color: Colors.white,
+                ),
+              ),
+              Text.rich(
+                TextSpan(children: [
+                  TextSpan(
+                      style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.white,
+                      ),
+                      text: "Kwasow",
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          _launchURL("https://github.com/Kwasow");
+                        }),
+                ]),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 10, left: 50),
+                child: SvgPicture.asset(
+                  twitterIcon,
+                  color: Colors.white,
+                ),
+              ),
+              Text.rich(
+                TextSpan(children: [
+                  TextSpan(
+                      style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.white,
+                      ),
+                      text: "@KarolWasowski",
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          _launchURL("https://twitter.com/KarolWasowski");
+                        }),
+                ]),
+              ),
+            ],
+          ),
+        ),
         children: [
           Column(
             children: [
@@ -109,15 +161,15 @@ class MyHomePage extends StatelessWidget {
                   Text.rich(
                     TextSpan(children: [
                       TextSpan(
-                          style: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.white,
-                          ),
-                          text: "Privacy policy",
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () async {
-                              Navigator.pushNamed(context, "/musekit_privacy");
-                            },
+                        style: const TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.white,
+                        ),
+                        text: "Privacy policy",
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            Navigator.pushNamed(context, "/musekit_privacy");
+                          },
                       ),
                     ]),
                   ),
@@ -139,15 +191,16 @@ class MyHomePage extends StatelessWidget {
                   Text.rich(
                     TextSpan(children: [
                       TextSpan(
-                          style: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.white,
-                          ),
-                          text: "GitHub",
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () async {
-                              _launchURL("https://github.com/Kwasow/Musekit");
-                            }),
+                        style: const TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.white,
+                        ),
+                        text: "GitHub",
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            _launchURL("https://github.com/Kwasow/Musekit");
+                          },
+                      ),
                     ]),
                   ),
                 ],
@@ -155,64 +208,12 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ],
-        footer: Footer(
-          backgroundColor: const Color.fromARGB(255, 39, 39, 39),
-          padding: const EdgeInsets.all(5.0),
-          alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10, left: 50),
-                child: SvgPicture.asset(
-                  githubIcon,
-                  color: Colors.white,
-                ),
-              ),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.white,
-                      ),
-                      text: "Kwasow",
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () async {
-                          _launchURL("https://github.com/Kwasow");
-                        }),
-                ]),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10, left: 50),
-                child: SvgPicture.asset(
-                  twitterIcon,
-                  color: Colors.white,
-                ),
-              ),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.white,
-                      ),
-                      text: "@KarolWasowski",
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () async {
-                          _launchURL("https://twitter.com/KarolWasowski");
-                        }),
-                ]),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
 
   void _launchURL(url) async {
-    if (!await launch(url)) {
+    if (!await launchUrl(url)) {
       throw 'Could not launch $url';
     }
   }
