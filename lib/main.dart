@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:footer/footer_view.dart';
 import 'package:githubpages/main_footer.dart';
 import 'package:githubpages/musekit_privacy.dart';
+import 'package:githubpages/tiles/tile.dart';
+import 'package:githubpages/tiles/tile_musekit.dart';
 import 'utils.dart';
 
 void main() {
@@ -36,8 +38,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String musekitIcon = 'assets/musekit-icon.svg';
-
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
@@ -47,8 +47,8 @@ class MyHomePage extends StatelessWidget {
         footer: MainFooter(),
         children: [
           Column(
-            children: [
-              const Align(
+            children: const [
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 40.0, top: 40),
@@ -62,7 +62,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 40, bottom: 40),
@@ -76,82 +76,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        color: Colors.white),
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.only(top: 40.0, bottom: 20),
-                    width: 200,
-                    height: 200,
-                    child: SvgPicture.asset(
-                      musekitIcon,
-                      color: Colors.black,
-                      semanticsLabel: 'Musekit app logo',
-                      width: 160,
-                      height: 160,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      "Musekit",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.white,
-                        ),
-                        text: "Privacy policy",
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () async {
-                            Navigator.pushNamed(context, "/musekit_privacy");
-                          },
-                      ),
-                    ]),
-                  ),
-                  Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                          style: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.white,
-                          ),
-                          text: "Play Store",
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () async {
-                              launchURL(
-                                  "https://play.google.com/store/apps/details?id=com.kwasow.musekit");
-                            }),
-                    ]),
-                  ),
-                  Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.white,
-                        ),
-                        text: "GitHub",
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () async {
-                            launchURL("https://github.com/Kwasow/Musekit");
-                          },
-                      ),
-                    ]),
-                  ),
-                ],
-              ),
+              MusekitTile()
             ],
           ),
         ],
