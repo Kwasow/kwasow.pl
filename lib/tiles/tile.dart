@@ -33,12 +33,13 @@ class Tile extends StatelessWidget {
           margin: const EdgeInsets.only(top: 40.0, bottom: 20),
           width: 200,
           height: 200,
-          child: SvgPicture.asset(
-            iconPath,
-            color: Colors.black,
-            semanticsLabel: 'Musekit app logo',
-            width: 160,
-            height: 160,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: SvgPicture.asset(
+              iconPath,
+              width: 160,
+              height: 160,
+            ),
           ),
         ),
         Padding(

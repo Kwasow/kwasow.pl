@@ -1,12 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:footer/footer_view.dart';
 import 'package:githubpages/main_footer.dart';
 import 'package:githubpages/musekit_privacy.dart';
-import 'package:githubpages/tiles/tile.dart';
 import 'package:githubpages/tiles/tile_musekit.dart';
-import 'utils.dart';
+import 'package:githubpages/tiles/tile_reanimated.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +73,8 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              MusekitTile()
+              MusekitTile(),
+              ReanimatedTile(),
             ],
           ),
         ],
