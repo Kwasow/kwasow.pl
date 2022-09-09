@@ -30,10 +30,10 @@ class MainFooter extends Footer {
                         decoration: TextDecoration.underline,
                         color: Colors.white,
                       ),
-                      text: "Kwasow",
+                      text: 'Kwasow',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () async {
-                          launchURL("https://github.com/Kwasow");
+                          launchURL('https://github.com/Kwasow');
                         }),
                 ]),
               ),
@@ -51,10 +51,10 @@ class MainFooter extends Footer {
                         decoration: TextDecoration.underline,
                         color: Colors.white,
                       ),
-                      text: "@KarolWasowski",
+                      text: '@KarolWasowski',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () async {
-                          launchURL("https://twitter.com/KarolWasowski");
+                          launchURL('https://twitter.com/KarolWasowski');
                         }),
                 ]),
               ),

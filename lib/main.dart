@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 40.0, top: 40),
                   child: Text(
-                    "Hi, I'm Karol.",
+                    'Hi, I\'m Karol.',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 40, bottom: 40),
                   child: Text(
-                    "These are the projects I am currently working on:",
+                    'These are the projects I am currently working on:',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
