@@ -11,7 +11,7 @@ class MainFooter extends Footer {
   MainFooter()
       : super(
           backgroundColor: const Color.fromARGB(255, 39, 39, 39),
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.all(25.0),
           alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
