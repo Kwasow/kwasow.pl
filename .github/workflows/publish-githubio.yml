@@ -1,13 +1,14 @@
 # .github/workflows/publish-githubio.yml
 name: Publish to Github Pages
-
 on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
@@ -23,22 +24,7 @@ jobs:
           flutter pub get
           flutter build web
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@main
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: github-pages
-          path: "build/web"
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          folder: build/web
