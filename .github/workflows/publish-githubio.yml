@@ -1,0 +1,30 @@
+# .github/workflows/publish-githubio.yml
+name: Publish to Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    setps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Build website
+        steps:
+        - run: flutter pub get
+        - run: flutter build web
+
+      - name: Upload to github.io
+        uses: actions/upload-artifact@main
+          with:
+            name: github-pages
+          path: "build/web"
