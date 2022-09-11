@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
@@ -23,8 +23,22 @@ jobs:
           flutter pub get
           flutter build web
 
-      - name: Upload to github.io
+      - name: Upload artifact
         uses: actions/upload-artifact@main
         with:
           name: github-pages
           path: "build/web"
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
