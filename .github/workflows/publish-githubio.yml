@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    setps:
+    steps:
       - name: Checkout main
         uses: actions/checkout@v3
 
@@ -19,12 +19,12 @@ jobs:
           channel: 'stable'
 
       - name: Build website
-        steps:
-        - run: flutter pub get
-        - run: flutter build web
+        run: |
+          flutter pub get
+          flutter build web
 
       - name: Upload to github.io
         uses: actions/upload-artifact@main
-          with:
-            name: github-pages
+        with:
+          name: github-pages
           path: "build/web"
