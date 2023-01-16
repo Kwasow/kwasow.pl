@@ -74,6 +74,20 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               MusekitTile(),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 40, bottom: 40),
+                  child: Text(
+                    'Past projects:',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0,
+                    ),
+                  ),
+                ),
+              ),
               ReanimatedTile(),
             ],
           ),
