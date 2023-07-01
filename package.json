@@ -2,6 +2,7 @@
   "name": "kwasow.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kwasow.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -22,7 +23,9 @@
     "build": "react-scripts build",
     "lint": "yarn eslint src/ --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "yarn eslint src/ --ext .js,.jsx,.ts,.tsx --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy" : "yarn build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +50,7 @@
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.44.0",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.0"
   },
   "lint-staged": {
