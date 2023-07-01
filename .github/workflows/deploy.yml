@@ -25,4 +25,6 @@ jobs:
         run: yarn predeploy
 
       - name: Deploy to GitHub Pages
-        run: yarn deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
