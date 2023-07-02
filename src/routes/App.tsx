@@ -1,8 +1,9 @@
 import React from 'react'
+import { Header } from '../components'
 
 function App() {
   return (
-    <p>Work in progress</p>
+    <Header>Work in progress</Header>
   )
 }
 

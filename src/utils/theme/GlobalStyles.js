@@ -17,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: 'Roboto Mono';
-    padding: 0;
-    margin: 0;
   }
 
   button {
@@ -26,8 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    padding: 0;
-    margin: 0;
+    background-color: ${props => props.theme.colors.background};
   }
 `
 
