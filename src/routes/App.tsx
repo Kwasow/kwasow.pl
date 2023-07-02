@@ -1,9 +1,20 @@
 import React from 'react'
-import { Header } from '../components'
+import { CurrentProjects, Header, PastProjects } from '../components'
 
 function App() {
   return (
-    <Header>Work in progress</Header>
+    <>
+      <Header>
+        Hi, I&apos;m Karol.<br/>
+        These are the projects I am currently working on:
+      </Header>
+      <CurrentProjects />
+      
+      <Header>
+        Past projects:
+      </Header>
+      <PastProjects />
+    </>
   )
 }
 
