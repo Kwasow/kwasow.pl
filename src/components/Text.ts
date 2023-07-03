@@ -7,6 +7,7 @@ export const Header = styled.h1`
 
 export const Text = styled.p`
   color: ${props => props.theme.colors.onBackground};
+  white-space: pre-wrap;
 `
 
 export const Title = styled(Text)`

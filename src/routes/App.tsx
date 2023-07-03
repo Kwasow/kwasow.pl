@@ -1,21 +1,15 @@
 import React from 'react'
-import { CurrentProjects, Header, PastProjects } from '../components'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Home'
+import NotFound from './NotFound'
+import MusekitPrivacy from './MusekitPrivacy'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Header>
-        Hi, I&apos;m Karol.<br/>
-        These are the projects I am currently working on:
-      </Header>
-      <CurrentProjects />
-      
-      <Header>
-        Past projects:
-      </Header>
-      <PastProjects />
-    </>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/musekit_privacy' element={<MusekitPrivacy />} />
+      <Route path='*' element={<NotFound />} />
+    </Routes>
   )
 }
-
-export default App

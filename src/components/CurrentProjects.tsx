@@ -6,7 +6,7 @@ function MusekitTile() {
   const name = 'Musekit'
   const icon = 'assets/musekit-icon.svg'
   const links: TileLink[] = [
-    { text: 'Privacy Policy', link: '' },
+    { text: 'Privacy Policy', link: '#/musekit_privacy' },
     {
       text: 'Play Store',
       link: 'https://play.google.com/store/apps/details?id=com.kwasow.musekit'

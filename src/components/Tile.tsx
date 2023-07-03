@@ -30,11 +30,13 @@ export function Tile(props: TileProps) {
       <Title>{name}</Title>
       
       {links.map((value, index) => {
+        const isInternalLink = value.link.startsWith('#')
+
         return (
           <Link
             key={index}  
             href={value.link}
-            target='_blank'>  
+            target={isInternalLink ? '' : '_blank'}>  
             {value.text}
           </Link>
         )
