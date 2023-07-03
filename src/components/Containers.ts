@@ -16,3 +16,10 @@ export const MainWrapper = styled.div`
   min-height: 100vh;
   justify-content: space-between;
 `
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+`

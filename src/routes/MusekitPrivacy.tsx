@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Text } from '../components'
+import { Content, Text } from '../components'
+import { NavigationBar } from '../components'
 
 const policyURL = 'assets/musekit-privacy.txt'
 
@@ -17,6 +18,11 @@ export default function MusekitPrivacy() {
   }, [])
 
   return (
-    <Text>{policyText}</Text>
+    <>
+      <NavigationBar title='Musekit privacy policy' backButton/>
+      <Content>
+        <Text>{policyText}</Text>
+      </Content>
+    </>
   )
 }

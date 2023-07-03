@@ -6,6 +6,7 @@ declare module 'styled-components' {
       background: string;
       onBackground: string;
       footer: string;
+      onFooterHover: string;
       icon: string;
     }
   }

@@ -21,13 +21,8 @@ export function DynamicTheme(props: DynamicThemeProps) {
 }
 
 const ThemeButton = styled.button`
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 10px;
-
-  background-color: ${props => props.theme.colors.footer};
-  color: ${props => props.theme.colors.onBackground};
+  background-color: rgb(39, 39, 39);
+  color: white;
 `
 
 export function ThemeSwitcher() {
