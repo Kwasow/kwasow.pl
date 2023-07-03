@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { styled } from 'styled-components'
-import { Link } from './Text'
+import { Link } from '../Text'
 
 export const Icon = styled.img`
   width: 150px;
@@ -11,36 +11,28 @@ export const Icon = styled.img`
   object-fit: contain;
 `
 
-export const IconSmall = styled.img`
-  width: 30px;
-  height: 30px;
-  padding: 10px;
-  color: ${props => props.theme.colors.onBackground};
-`
-
 const IconLinkWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
 `
 
 type IconLinkProps = {
-  icon: string;
+  icon: ReactNode;
   text: string;
   link: string;
-  alt: string;
 }
 
 export function IconLink(props: IconLinkProps) {
-  const { icon, text, link, alt } = props
+  const { icon, text, link } = props
 
   return (
     <IconLinkWrapper>
-      <IconSmall src={icon} alt={alt}/>
+      {icon}
       <Link href={link}>{text}</Link>
     </IconLinkWrapper>
   )

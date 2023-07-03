@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import { Link, Title } from './Text'
-import { Icon } from './Icon'
+import { Icon } from './icons'
 
 const TileWrapper = styled.div`
   display: flex;

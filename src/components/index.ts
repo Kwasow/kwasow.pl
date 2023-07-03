@@ -1,7 +1,6 @@
 export { Grid, MainWrapper } from './Containers'
 export { CurrentProjects } from './CurrentProjects'
 export { Footer, KwasowFooter } from './Footer'
-export { Icon, IconLink } from './Icon'
 export { PastProjects } from './PastProjects'
 export { Header, Text, Title, Link } from './Text'
 export { Tile, type TileLink } from './Tile'

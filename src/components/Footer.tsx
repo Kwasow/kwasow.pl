@@ -1,6 +1,6 @@
-import React from 'react'
-import { styled } from 'styled-components'
-import { IconLink } from './Icon'
+import React, { useContext } from 'react'
+import { ThemeContext, styled } from 'styled-components'
+import { GithubIcon, IconLink, TwitterIcon } from './icons'
 
 export const Footer = styled.footer`
   background-color: rgb(39, 39, 39);
@@ -11,19 +11,20 @@ export const Footer = styled.footer`
 `
 
 export function KwasowFooter() {
+  const themeContext = useContext(ThemeContext)
+  const iconColor = themeContext?.colors.onBackground
+
   return (
     <Footer>
       <IconLink
-        icon='assets/github.svg'
+        icon={<GithubIcon color={iconColor}/>}
         link='https://github.com/Kwasow'
-        text='Kwasow'
-        alt='GitHub'/>
+        text='Kwasow'/>
 
       <IconLink
-        icon='assets/twitter.svg'
+        icon={<TwitterIcon color={iconColor}/>}
         link='https://twitter.com/KarolWasowski'
-        text='@KarolWasowski'
-        alt='Twitter'/>
+        text='@KarolWasowski'/>
     </Footer>
   )
 }
