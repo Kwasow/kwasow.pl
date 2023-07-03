@@ -23,7 +23,7 @@ function PokerioTile() {
   const name = 'Pokerio'
   const icon = 'assets/pokerio-icon.svg'
   const links: TileLink[] = [
-    { text: 'GitHub', link: 'https://github.com/poker-io' }
+    { text: 'GitHub', link: '' }
   ]
 
   return (
