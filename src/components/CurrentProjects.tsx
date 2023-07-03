@@ -19,10 +19,23 @@ function MusekitTile() {
   )
 }
 
+function PokerioTile() {
+  const name = 'Pokerio'
+  const icon = 'assets/pokerio-icon.svg'
+  const links: TileLink[] = [
+    { text: 'GitHub', link: 'https://github.com/poker-io' }
+  ]
+
+  return (
+    <Tile name={name} icon={icon} links={links}/>
+  )
+}
+
 export function CurrentProjects() {
   return (
     <Grid>
       <MusekitTile />
+      <PokerioTile />
     </Grid>
   )
 }
