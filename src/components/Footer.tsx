@@ -3,7 +3,7 @@ import { ThemeContext, styled } from 'styled-components'
 import { GithubIcon, IconLink, TwitterIcon } from './icons'
 
 export const Footer = styled.footer`
-  background-color: rgb(39, 39, 39);
+  background-color: ${props => props.theme.colors.footer};
   display: flex;
   width: 100%;
   align-items: center;
@@ -12,7 +12,7 @@ export const Footer = styled.footer`
 
 export function KwasowFooter() {
   const themeContext = useContext(ThemeContext)
-  const iconColor = themeContext?.colors.onBackground
+  const iconColor = themeContext?.colors.icon
 
   return (
     <Footer>

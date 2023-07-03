@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './routes/App'
 import GlobalStyle from './utils/theme/GlobalStyles'
 import { ThemeProvider } from 'styled-components'
-import { darkTheme } from './utils/theme/theme'
+import { Theme } from './utils/theme/theme'
 import { HashRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={Theme.DARK}>
         <GlobalStyle />
         <App />
       </ThemeProvider>

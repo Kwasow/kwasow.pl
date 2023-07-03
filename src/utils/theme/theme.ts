@@ -1,8 +1,24 @@
 import { DefaultTheme } from 'styled-components'
 
-export const darkTheme: DefaultTheme = {
+const darkTheme: DefaultTheme = {
   colors: {
     background: 'rgb(24, 24, 24)',
-    onBackground: 'rgb(255, 255, 255)'
+    onBackground: 'rgb(255, 255, 255)',
+    footer: 'rgb(39, 39, 39)',
+    icon: 'rgb(255, 255, 255)',
   }
+}
+
+const lightTheme: DefaultTheme = {
+  colors: {
+    background: 'rgb(255, 255, 255)',
+    onBackground: 'rgb(0, 0, 0)',
+    footer: 'rgb(224, 224, 224)',
+    icon: 'rgb(132, 132, 132)',
+  }
+}
+
+export const Theme = {
+  LIGHT: lightTheme,
+  DARK: darkTheme,
 }

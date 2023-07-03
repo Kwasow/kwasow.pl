@@ -5,6 +5,8 @@ declare module 'styled-components' {
     colors: {
       background: string;
       onBackground: string;
+      footer: string;
+      icon: string;
     }
   }
 }
