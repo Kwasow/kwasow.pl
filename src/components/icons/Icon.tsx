@@ -33,7 +33,7 @@ export function IconLink(props: IconLinkProps) {
   return (
     <IconLinkWrapper>
       {icon}
-      <Link href={link}>{text}</Link>
+      <Link href={link} target='_blank'>{text}</Link>
     </IconLinkWrapper>
   )
 }
