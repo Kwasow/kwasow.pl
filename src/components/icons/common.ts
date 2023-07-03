@@ -8,4 +8,6 @@ export const RootSvg = styled.svg`
   width: 32px;
   height: 32px;
   padding: 10px;
+
+  background-color: transparent;
 `

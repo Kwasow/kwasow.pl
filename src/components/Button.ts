@@ -16,8 +16,11 @@ export const InvisibleButton = styled.button`
   border-radius: 1vh;
   cursor: pointer;
 
+  margin: 0;
+  padding: 0;
+
   &:hover {
-    background-color: ${props => props.theme.onFooterHover};
+    background-color: ${props => props.theme.colors.onFooterHover};
   }
 `
 

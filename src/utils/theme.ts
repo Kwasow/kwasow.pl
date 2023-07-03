@@ -5,7 +5,7 @@ const darkTheme: DefaultTheme = {
     background: 'rgb(24, 24, 24)',
     onBackground: 'rgb(255, 255, 255)',
     footer: 'rgb(39, 39, 39)',
-    onFooterHover: 'rgb(128, 128, 128)',
+    onFooterHover: 'rgb(64, 64, 64)',
     icon: 'rgb(255, 255, 255)',
   }
 }
@@ -15,7 +15,7 @@ const lightTheme: DefaultTheme = {
     background: 'rgb(255, 255, 255)',
     onBackground: 'rgb(0, 0, 0)',
     footer: 'rgb(224, 224, 224)',
-    onFooterHover: 'rgb(64, 64, 64)',
+    onFooterHover: 'rgb(191, 191, 191)',
     icon: 'rgb(132, 132, 132)',
   }
 }
