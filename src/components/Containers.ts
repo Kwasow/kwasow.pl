@@ -22,4 +22,5 @@ export const Content = styled.div`
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 `
