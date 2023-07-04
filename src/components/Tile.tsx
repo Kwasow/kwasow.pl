@@ -10,6 +10,10 @@ const TileWrapper = styled.div`
   align-items: center;
 `
 
+const TileTitle = styled(Title)`
+  text-align: center;
+`
+
 export type TileLink = {
   text: string;
   link: string;
@@ -27,7 +31,7 @@ export function Tile(props: TileProps) {
   return (
     <TileWrapper>
       <Icon src={icon} alt={`${name} logo`}/>
-      <Title>{name}</Title>
+      <TileTitle>{name}</TileTitle>
       
       {links.map((value, index) => {
         const isInternalLink = value.link.startsWith('#')

@@ -23,7 +23,20 @@ function PokerioTile() {
   const name = 'Pokerio'
   const icon = 'assets/pokerio-icon.svg'
   const links: TileLink[] = [
-    { text: 'GitHub', link: '' }
+    { text: 'GitHub', link: 'https://github.com/poker-io' }
+  ]
+
+  return (
+    <Tile name={name} icon={icon} links={links}/>
+  )
+}
+
+function WeekendTile() {
+  const name = 'Weekend\nz ginekolgią'
+  const icon = 'assets/weekend-logo.png'
+  const links: TileLink[] = [
+    { text: 'Website', link: 'https://weekendzginekologia.org.pl/' },
+    { text: 'GitHub', link: 'https://github.com/Kwasow/egg' }
   ]
 
   return (
@@ -36,6 +49,7 @@ export function CurrentProjects() {
     <Grid>
       <MusekitTile />
       <PokerioTile />
+      <WeekendTile />
     </Grid>
   )
 }
