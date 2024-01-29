@@ -4,6 +4,7 @@ import Home from './Home'
 import NotFound from './NotFound'
 import MusekitPrivacy from './MusekitPrivacy'
 import { KwasowFooter, MainWrapper } from '../components'
+import Teaching from './Teaching'
 
 export default function App() {
   return (
@@ -11,7 +12,9 @@ export default function App() {
       <div>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/musekit_privacy' element={<MusekitPrivacy />} />
+          <Route path='/teaching' element={<Teaching />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

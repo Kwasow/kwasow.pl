@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext, styled } from 'styled-components'
-import { Header } from './Text'
+import { Header, Link } from './Text'
 import { ArrowBackIcon } from './icons'
 import { useNavigate } from 'react-router-dom'
 import { InvisibleRoundButton } from './Button'
@@ -35,9 +35,12 @@ export function NavigationBar(props: NavigationBarProps) {
           && <ArrowBackIcon color={themeContext?.colors.onBackground}/>}
       </InvisibleRoundButton>
       <Header>{title}</Header>
-      {/* This is here for proper spacing
-          TODO: Add theme switcher */}
-      <div></div>
+      {/* TODO: Add theme switcher */}
+      <div>
+        <Link href='#/home'>Home</Link>
+        <span style={{ display: 'inline-block', width: '1rem' }}/>
+        <Link href='#/teaching'>Teaching</Link>
+      </div>
     </TopBar>
   )
 }
