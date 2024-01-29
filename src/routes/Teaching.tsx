@@ -9,7 +9,7 @@ import {
 export default function Teaching() {
   return (
     <>
-      <NavigationBar title='Teaching'/>
+      <NavigationBar title='Teaching' backButton={true}/>
       <Content>
         <Header>
           Materiały do zajęć:

@@ -4,6 +4,7 @@ import { Header, Link } from './Text'
 import { ArrowBackIcon } from './icons'
 import { useNavigate } from 'react-router-dom'
 import { InvisibleRoundButton } from './Button'
+import { Row } from './Containers'
 
 type NavigationBarProps = {
   title: string;
@@ -18,8 +19,8 @@ const TopBar = styled.div`
   align-items: center;
   background-color: ${props => props.theme.colors.footer};
 
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 20px;
+  padding-right: 20px;
 `
 
 export function NavigationBar(props: NavigationBarProps) {
@@ -30,17 +31,22 @@ export function NavigationBar(props: NavigationBarProps) {
 
   return (
     <TopBar>
-      <InvisibleRoundButton onClick={() => navigate('/')}>
-        {backButton
-          && <ArrowBackIcon color={themeContext?.colors.onBackground}/>}
-      </InvisibleRoundButton>
-      <Header>{title}</Header>
-      {/* TODO: Add theme switcher */}
-      <div>
+      <Row>
+        <div>
+          <InvisibleRoundButton onClick={() => navigate('/')}>
+            {backButton
+              && <ArrowBackIcon color={themeContext?.colors.onBackground}/>}
+          </InvisibleRoundButton>
+        </div>
+        <Header>{title}</Header>
+      </Row>
+      
+      <Row>
+        {/* TODO: Add theme switcher */}
         <Link href='#/home'>Home</Link>
         <span style={{ display: 'inline-block', width: '1rem' }}/>
         <Link href='#/teaching'>Teaching</Link>
-      </div>
+      </Row>
     </TopBar>
   )
 }

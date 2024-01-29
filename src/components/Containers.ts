@@ -24,3 +24,9 @@ export const Content = styled.div`
   margin-right: 20px;
   margin-bottom: 20px;
 `
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`

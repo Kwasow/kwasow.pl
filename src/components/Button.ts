@@ -5,6 +5,7 @@ export const InvisibleButton = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1 / 1;
 
   text-transform: uppercase;
   font-weight: bold;
