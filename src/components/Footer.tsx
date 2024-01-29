@@ -8,6 +8,7 @@ export const Footer = styled.footer`
   width: 100%;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 export function KwasowFooter() {
