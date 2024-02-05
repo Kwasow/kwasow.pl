@@ -24,34 +24,22 @@ export default function Teaching() {
 
         <Row>
           <Content>
-            <Title>Klasa 3</Title>
+            <Title>Casino Royal</Title>
             <Text>
               - 2024/02/05{' '}
               <Link
-                href='/static/20240205-konspekt.pdf'
-                target='_blank'>Konspekt</Link>{' '}
-              <Link
-                href='/'
-                target='_blank'>Test</Link>{' '}
-              <Link
-                href='/static/zadania/zadanie82-piraci.pdf'
-                target='_blank'>Praca domowa</Link>
+                href='/static/casino-royal/20240205.pdf'
+                target='_blank'>Konspekt</Link>
             </Text>
           </Content>
 
           <Content>
-            <Title>Klasa 4</Title>
+            <Title>Jamajka</Title>
             <Text>
               - 2024/02/05{' '}
               <Link
-                href='/static/20240205-konspekt.pdf'
-                target='_blank'>Konspekt</Link>{' '}
-              <Link
-                href='/'
-                target='_blank'>Test</Link>{' '}
-              <Link
-                href='/static/zadania/zadanie82-piraci.pdf'
-                target='_blank'>Praca domowa</Link>
+                href='/static/jamajka/20240205.pdf'
+                target='_blank'>Konspekt</Link>
             </Text>
           </Content>
         </Row>
