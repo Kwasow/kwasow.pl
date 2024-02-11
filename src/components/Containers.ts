@@ -30,3 +30,8 @@ export const Row = styled.div`
   flex-direction: row;
   align-items: center;
 `
+
+export const RowSimple = styled.div`
+  display: flex;
+  flex-direction: row;
+`
