@@ -44,8 +44,6 @@ export function NavigationBar(props: NavigationBarProps) {
       <Row>
         {/* TODO: Add theme switcher */}
         <Link href='#/home'>Home</Link>
-        <span style={{ display: 'inline-block', width: '1rem' }}/>
-        <Link href='#/teaching'>Teaching</Link>
       </Row>
     </TopBar>
   )
