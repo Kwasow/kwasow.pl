@@ -1,3 +1,3 @@
-# kwasow.github.io
+# kwasow.pl
 
-My github.io website's source code. Built using React.
+My website's source code. Built using React.
