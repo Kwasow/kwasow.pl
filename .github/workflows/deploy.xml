@@ -1,0 +1,29 @@
+name: Publish Website
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: |
+          yarn install
+          yarn build
+      - name: upload
+        uses: milanmk/actions-file-deployer@master
+        with:
+          local-path: build/
+
+          remote-protocol: ftp
+          remote-path: /www
+          remote-port: 22
+
+          remote-host: ${{ secrets.FTP_HOST }}
+          remote-user: ${{ secrets.FTP_USER }}
+          remote-password: ${{ secrets.FTP_PASSWORD }}
