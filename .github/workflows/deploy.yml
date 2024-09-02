@@ -20,7 +20,7 @@ jobs:
         with:
           local-path: build/
 
-          remote-protocol: ftp
+          remote-protocol: sftp
           remote-path: /www
           remote-port: 22
 
