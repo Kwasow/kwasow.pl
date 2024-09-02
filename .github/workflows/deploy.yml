@@ -22,6 +22,8 @@ jobs:
         with:
           local-path: build/
 
+          sync: full
+
           remote-protocol: sftp
           remote-path: /www
           remote-port: 22
