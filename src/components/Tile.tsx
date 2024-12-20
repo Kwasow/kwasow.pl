@@ -34,7 +34,7 @@ export function Tile(props: TileProps) {
       <TileTitle>{name}</TileTitle>
       
       {links.map((value, index) => {
-        const isInternalLink = value.link.startsWith('#')
+        const isInternalLink = value.link.startsWith('/')
 
         return (
           <Link
