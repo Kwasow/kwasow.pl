@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext, styled } from 'styled-components'
-import { GithubIcon, IconLink, TwitterIcon, MastodonIcon } from './icons'
+import { GithubIcon, IconLink, MastodonIcon } from './icons'
 
 export const Footer = styled.footer`
   background-color: ${props => props.theme.colors.footer};
@@ -21,11 +21,6 @@ export function KwasowFooter() {
         icon={<GithubIcon color={iconColor}/>}
         link='https://github.com/Kwasow'
         text='Kwasow'/>
-
-      <IconLink
-        icon={<TwitterIcon color={iconColor}/>}
-        link='https://twitter.com/KarolWasowski'
-        text='@KarolWasowski'/>
 
       <IconLink
         icon={<MastodonIcon color={iconColor}/>}
