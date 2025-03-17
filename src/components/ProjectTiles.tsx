@@ -82,6 +82,21 @@ function BinaryTile() {
   )
 }
 
+function FlamingoTile() {
+  const name = 'Flamingo'
+  const icon = 'assets/flamingo.svg'
+  const links: TileLink[] = [
+    {
+      text: 'GitHub',
+      link: 'https://github.com/Kwasow/Flamingo'
+    }
+  ]
+  
+  return (
+    <Tile name={name} icon={icon} links={links}/>
+  )
+}
+
 export function PastProjects() {
   return (
     <Grid>
@@ -96,6 +111,7 @@ export function CurrentProjects() {
   return (
     <Grid>
       <MusekitTile />
+      <FlamingoTile />
       <BinaryTile />
     </Grid>
   )
