@@ -45,7 +45,9 @@ export function NavigationBar(props: NavigationBarProps) {
         {/* TODO: Add theme switcher */}
         <Link href='#/home'>Home</Link>
         <span style={{ display: 'inline-block', width: '1rem' }}/>
-        <Link href='/matura/docs/category/wstęp'>Teaching</Link>
+        <Link href='https://startowa.kwasow.pl/docs/category/wstęp'>
+          Teaching
+        </Link>
       </Row>
     </TopBar>
   )
