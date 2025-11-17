@@ -4,23 +4,23 @@
   "private": true,
   "homepage": "https://kwasow.github.io",
   "dependencies": {
-    "@reduxjs/toolkit": "^2.1.0",
-    "@testing-library/jest-dom": "^6.3.0",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/jest": "^29.5.11",
-    "@types/node": "^20.11.10",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "lint-staged": "^15.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0",
-    "react-router-dom": "^6.21.3",
+    "@reduxjs/toolkit": "^2.10.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "lint-staged": "^16.2.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.6",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.8",
-    "typescript": "^5.3.3",
-    "web-vitals": "^3.5.2"
+    "styled-components": "^6.1.19",
+    "typescript": "^5.9.3",
+    "web-vitals": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,12 +30,6 @@
     "prepare": "husky install",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -51,12 +45,12 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
-    "gh-pages": "^6.1.1",
-    "husky": "^9.0.7"
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
