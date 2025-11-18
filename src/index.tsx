@@ -5,7 +5,7 @@ import GlobalStyle from './utils/GlobalStyles'
 import { HashRouter } from 'react-router-dom'
 import { DynamicTheme } from './components/DynamicTheme'
 import { Provider } from 'react-redux'
-import { store } from './utils/store'
+import { store } from './redux/setupStore'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
