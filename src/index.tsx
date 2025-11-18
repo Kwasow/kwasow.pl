@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './routes/App'
-import GlobalStyle from './utils/GlobalStyles'
+import { GlobalStyle } from './features/theme/components'
 import { HashRouter } from 'react-router-dom'
-import { DynamicTheme } from './components/DynamicTheme'
+import { DynamicTheme } from './features/theme/components'
 import { Provider } from 'react-redux'
 import { store } from './redux/setupStore'
 
