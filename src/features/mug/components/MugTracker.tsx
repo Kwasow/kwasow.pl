@@ -13,29 +13,9 @@ import {
 } from '../../../components'
 import { startTracking } from '../slice'
 
-function LoadingHeader() {
+function DetailsTable() {
   const loading = useAppSelector(state => state.mug.loading)
 
-  if (loading) {
-    return (
-      <Row>
-        <Text>Namierzanie złodzieja…</Text>
-        <FillContainer />
-        <BlinkingLoader />
-      </Row>
-    )
-  } else {
-    return (
-      <Row>
-        <Text>Złodziej namierzony</Text>
-        <FillContainer />
-        <Text>✔</Text>
-      </Row>
-    )
-  }
-}
-
-function DetailsTable() {
   const ip = useAppSelector(state => state.mug.ip)
   const screenWidth = useAppSelector(state => state.mug.windowWidth)
   const screenHeight = useAppSelector(state => state.mug.windowHeight)
@@ -43,28 +23,72 @@ function DetailsTable() {
   const os = useAppSelector(state => state.mug.os)
   const device = useAppSelector(state => state.mug.device)
 
-  return <Table>
-    <TableRow>
-      <TableCell><Text>Adres IP</Text></TableCell>
-      <TableCellRight><Text>{ip}</Text></TableCellRight>
-    </TableRow>
-    <TableRow>
-      <TableCell><Text>Rozmiar ekranu</Text></TableCell>
-      <TableCellRight><Text>{screenWidth}×{screenHeight}</Text></TableCellRight>
-    </TableRow>
-    <TableRow>
-      <TableCell><Text>Przeglądarka</Text></TableCell>
-      <TableCellRight><Text>{browser}</Text></TableCellRight>
-    </TableRow>
-    <TableRow>
-      <TableCell><Text>System</Text></TableCell>
-      <TableCellRight><Text>{os}</Text></TableCellRight>
-    </TableRow>
-    <TableRow>
-      <TableCell><Text>Urządzenie</Text></TableCell>
-      <TableCellRight><Text>{device}</Text></TableCellRight>
-    </TableRow>
-  </Table>
+  return <>
+    {loading
+      ? <Row>
+        <Text>Namierzanie złodzieja…</Text>
+      </Row>
+      : <Row>
+        <Text>Złodziej namierzony</Text>
+        <FillContainer />
+        <Text>✔</Text>
+      </Row>
+    }
+    <Table>
+      <tbody>
+        <TableRow>
+          <TableCell style={{ width: '50%' }}><Text>Adres IP</Text></TableCell>
+          <TableCellRight style={{ width: '50%' }}>
+            {
+              ip === undefined
+                ? <BlinkingLoader />
+                : <Text>{ip}</Text>
+            }
+          </TableCellRight>
+        </TableRow>
+        <TableRow>
+          <TableCell><Text>Rozmiar ekranu</Text></TableCell>
+          <TableCellRight>
+            {
+              screenHeight === undefined || screenWidth === undefined
+                ? <BlinkingLoader />
+                : <Text>{screenHeight}×{screenWidth}</Text>
+            }
+          </TableCellRight>
+        </TableRow>
+        <TableRow>
+          <TableCell><Text>Przeglądarka</Text></TableCell>
+          <TableCellRight>
+            {
+              browser === undefined
+                ? <BlinkingLoader />
+                : <Text>{browser}</Text>
+            }
+          </TableCellRight>
+        </TableRow>
+        <TableRow>
+          <TableCell><Text>System</Text></TableCell>
+          <TableCellRight>
+            {
+              os === undefined
+                ? <BlinkingLoader />
+                : <Text>{os}</Text>
+            }
+          </TableCellRight>
+        </TableRow>
+        <TableRow>
+          <TableCell><Text>Urządzenie</Text></TableCell>
+          <TableCellRight>
+            {
+              device === undefined
+                ? <BlinkingLoader />
+                : <Text>{device}</Text>
+            }
+          </TableCellRight>
+        </TableRow>
+      </tbody>
+    </Table>
+  </>
 }
 
 function TopWarnings() {
@@ -91,7 +115,6 @@ export function MugTracker() {
   }, [])
 
   return <>
-    <LoadingHeader />
     <TopWarnings />
     <DetailsTable />
     <BottomWarnings />

@@ -32,27 +32,32 @@ export function setupMugMiddleware(
       const os = parser.getOS()
       const device = parser.getDevice()
       
-      await sleep(250)
+      await sleep(1000)
       listener.dispatch(
         setDimensions([window.screen.height, window.screen.width])
       )
       
-      await sleep(500)
-      listener.dispatch(setBrowser(browser.name))
+      await sleep(700)
+      listener.dispatch(setBrowser(browser.name) || 'N/A')
       
-      await sleep(650)
-      listener.dispatch(setDevice(`${device.vendor} ${device.model}`))
+      await sleep(950)
+      if (device.vendor && device.model) {
+        listener.dispatch(setDevice(`${device.vendor} ${device.model}`))
+      } else {
+        listener.dispatch(setDevice('N/A'))
+      }
 
-      await sleep(450)
-      listener.dispatch(setOs(os.name))
+      await sleep(650)
+      listener.dispatch(setOs(os.name || 'N/A'))
       
-      await sleep(250)
+      await sleep(450)
       const ip = await ipPromise
       if (typeof ip === 'string') {
         listener.dispatch(setIp(ip))
+      } else {
+        listener.dispatch(setIp('N/A'))
       }
-
-      await sleep(2000)
+      
       listener.dispatch(finishTracking())
     },
   })

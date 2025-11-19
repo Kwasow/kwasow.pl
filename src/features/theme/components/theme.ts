@@ -3,6 +3,7 @@ import { DefaultTheme } from 'styled-components'
 const darkTheme: DefaultTheme = {
   colors: {
     background: 'rgb(24, 24, 24)',
+    altBackground: 'rgb(39, 39, 39)',
     onBackground: 'rgb(255, 255, 255)',
     footer: 'rgb(39, 39, 39)',
     onFooterHover: 'rgb(64, 64, 64)',
@@ -13,6 +14,7 @@ const darkTheme: DefaultTheme = {
 const lightTheme: DefaultTheme = {
   colors: {
     background: 'rgb(255, 255, 255)',
+    altBackground: 'rgb(242, 242, 242)',
     onBackground: 'rgb(0, 0, 0)',
     footer: 'rgb(224, 224, 224)',
     onFooterHover: 'rgb(191, 191, 191)',
