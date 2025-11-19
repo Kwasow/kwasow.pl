@@ -20,6 +20,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.19",
     "typescript": "^5.9.3",
+    "ua-parser-js": "^2.0.6",
     "web-vitals": "^5.1.0"
   },
   "scripts": {

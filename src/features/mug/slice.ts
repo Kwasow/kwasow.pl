@@ -2,31 +2,62 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface MugState {
   loading: boolean,
-  windowHeight: number,
-  windowWidth: number,
   ip: string | undefined,
+  windowHeight: number | undefined,
+  windowWidth: number | undefined,
+  browser: string | undefined,
+  os: string | undefined,
+  device: string | undefined,
 }
-
-const MUG_ACTION = 'mug'
-const ACTION_START_TRACKING = 'startTracking'
-export const THEME_ACTION_SWITCH = `${MUG_ACTION}/${ACTION_START_TRACKING}`
 
 const initialState: MugState = {
   loading: false,
-  windowHeight: window.screen.height,
-  windowWidth: window.screen.width,
   ip: undefined,
+  windowHeight: undefined,
+  windowWidth: undefined,
+  browser: undefined,
+  os: undefined,
+  device: undefined,
 }
 
 export const mugSlice = createSlice({
-  name: MUG_ACTION,
+  name: 'mug',
   initialState,
   reducers: {
-    [ACTION_START_TRACKING]: (state) => {
+    ['startTracking']: (state) => {
       state.loading = true
-    }
+    },
+    ['finishTracking']: (state) => {
+      state.loading = false
+    },
+    ['setIp']: (state, action) => {
+      state.ip = action.payload
+    },
+    ['setDimensions']: (state, action) => {
+      const [height, width] = action.payload
+      
+      state.windowWidth = width
+      state.windowHeight = height
+    },
+    ['setBrowser']: (state, action) => {
+      state.browser = action.payload
+    },
+    ['setOs']: (state, action) => {
+      state.os = action.payload
+    },
+    ['setDevice']: (state, action) => {
+      state.device = action.payload
+    },
   }
 })
 
-export const { startTracking } = mugSlice.actions
+export const {
+  finishTracking,
+  setBrowser,
+  setDevice,
+  setDimensions,
+  setIp,
+  setOs,
+  startTracking
+} = mugSlice.actions
 export default mugSlice.reducer
