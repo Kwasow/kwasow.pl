@@ -9,6 +9,10 @@ export const Text = styled.p`
   white-space: pre-wrap;
 `
 
+export const CenteredText = styled(Text)`
+  text-align: center;
+`
+
 export const Title = styled(Text)`
   font-weight: bold;
   font-size: 1.25rem;

@@ -35,3 +35,7 @@ export const RowSimple = styled.div`
   display: flex;
   flex-direction: row;
 `
+
+export const FillContainer = styled.div`
+  flex: 1;
+`

@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 interface MugState {
-  loading: boolean,
-  ip: string | undefined,
-  windowHeight: number | undefined,
-  windowWidth: number | undefined,
-  browser: string | undefined,
-  os: string | undefined,
-  device: string | undefined,
+  loading: boolean;
+  ip?: string;
+  windowHeight?: number;
+  windowWidth?: number;
+  browser?: string;
+  os?: string;
+  device?: string;
 }
 
 const initialState: MugState = {

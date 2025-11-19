@@ -38,10 +38,10 @@ export function setupMugMiddleware(
       )
       
       await sleep(500)
-      listener.dispatch(setBrowser(`${browser.name} ${browser.version}`))
+      listener.dispatch(setBrowser(browser.name))
       
       await sleep(650)
-      listener.dispatch(setDevice(device.type))
+      listener.dispatch(setDevice(`${device.vendor} ${device.model}`))
 
       await sleep(450)
       listener.dispatch(setOs(os.name))
@@ -52,6 +52,7 @@ export function setupMugMiddleware(
         listener.dispatch(setIp(ip))
       }
 
+      await sleep(2000)
       listener.dispatch(finishTracking())
     },
   })

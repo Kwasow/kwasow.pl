@@ -9,6 +9,7 @@ import { Row } from './Containers'
 type NavigationBarProps = {
   title: string;
   backButton?: boolean;
+  shortcuts?: boolean;
 }
 
 const TopBar = styled.div`
@@ -27,7 +28,7 @@ export function NavigationBar(props: NavigationBarProps) {
   const themeContext = useContext(ThemeContext)
   const navigate = useNavigate()
   
-  const { backButton, title } = props
+  const { backButton, title, shortcuts } = props
 
   return (
     <TopBar>
@@ -42,13 +43,23 @@ export function NavigationBar(props: NavigationBarProps) {
       </Row>
       
       <Row>
-        {/* TODO: Add theme switcher */}
-        <Link href='#/home'>Home</Link>
-        <span style={{ display: 'inline-block', width: '1rem' }}/>
-        <Link href='https://startowa.kwasow.pl/docs/category/wstęp'>
-          Teaching
-        </Link>
+        {shortcuts
+          ? <Shortcuts />
+          : <></>}
       </Row>
     </TopBar>
+  )
+}
+
+function Shortcuts() {
+  return (
+    <>
+      {/* TODO: Add theme switcher */}
+      <Link href='#/home'>Home</Link>
+      <span style={{ display: 'inline-block', width: '1rem' }}/>
+      <Link href='https://startowa.kwasow.pl/docs/category/wstęp'>
+        Teaching
+      </Link>
+    </>
   )
 }
