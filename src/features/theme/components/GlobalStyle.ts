@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Roboto Mono';
     font-style: normal;
@@ -28,5 +28,3 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.colors.background};
   }
 `
-
-export default GlobalStyle

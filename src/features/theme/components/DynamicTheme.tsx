@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 import { ThemeProvider, styled } from 'styled-components'
-import { useAppDispatch, useAppSelector } from '../utils/hooks'
-import { Theme } from '../utils/theme'
-import { switchTheme } from '../utils/slices/themeSlice'
+import { useAppDispatch, useAppSelector } from '../../../redux/setupHooks'
+import { Theme } from '.'
+import { switchTheme } from '../slice'
 
 type DynamicThemeProps = {
   children: ReactNode[]

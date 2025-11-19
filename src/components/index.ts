@@ -1,8 +1,23 @@
 export { InvisibleButton, InvisibleRoundButton } from './Button'
-export { Content, Grid, MainWrapper, Row, RowSimple } from './Containers'
+export {
+  Content,
+  FillContainer,
+  Grid,
+  MainWrapper,
+  Row,
+  RowSimple
+} from './Containers'
+export { Dots } from './Dots'
 export { CurrentProjects, PastProjects } from './ProjectTiles'
-export { DynamicTheme, ThemeSwitcher } from './DynamicTheme'
 export { Footer, KwasowFooter } from './Footer'
+export { BlinkingLoader } from './Loaders'
 export { NavigationBar } from './NavigationBar'
-export { Header, Text, Title, Link } from './Text'
+export {
+  Table,
+  TableCell,
+  TableCellRight,
+  TableRow,
+  TableHeader
+} from './Tables'
+export { CenteredText, Header, Text, Title, Link } from './Text'
 export { Tile, type TileLink } from './Tile'
