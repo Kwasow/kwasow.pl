@@ -43,9 +43,9 @@ export function NavigationBar(props: NavigationBarProps) {
       </Row>
       
       <Row>
-        {shortcuts
-          ? <Shortcuts />
-          : <></>}
+        {shortcuts === false
+          ? <></>
+          : <Shortcuts />}
       </Row>
     </TopBar>
   )
